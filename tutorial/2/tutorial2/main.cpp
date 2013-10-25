@@ -52,15 +52,9 @@ public:
   bool have_4_members()
   {
     if((member[0]) && (member[1]) && (member[2]) && (member[3]))
-	    {
       return true;
-      cout << "3";	    
-}
     else
-	    {
-		    cout << "the number of members in your team is not 4!" << endl;
-		    return false;
-	    }
+        cout << "the number of members in your team is not 4!" << endl;
   }
 
   float average_age()
@@ -94,7 +88,7 @@ public:
 
 void join_member(Team& team, Person& member)
 {
-    for (int i=0; i<3;)
+    for (int i=0; i<4;)
     {
         if(team.member[i])
             i++;
@@ -103,7 +97,7 @@ void join_member(Team& team, Person& member)
     }
 }
 
-bool team_valid(Team&# team)
+bool team_valid(Team team)
 {
     if(team.valid_average_age())
         return true;
@@ -114,18 +108,16 @@ bool team_valid(Team&# team)
 int main()
 {
     Team imperial("Imperial","Imperial College");
-    cout << "1"<<endl;
     Person ivor("Ivor Bigbrain", 20, "Imperial College");
     Person prezza("Prezza Buzza", 18, "Imperial College");
     Person ivonna("Ivonna Singh", 25, "Imperial College");
     Person yuman("Yuman Google", 32, "Imperial College");
-    cout << "2"<<endl;
 
     join_member(imperial, ivor);
     join_member(imperial, prezza);
     join_member(imperial, ivonna);
     join_member(imperial, yuman);
-    cout << "3" << endl;
+
     prezza.graduate();
 
     if (team_valid(imperial))
@@ -133,5 +125,5 @@ int main()
     else
         cout << imperial.name << ": your team is not qualified!" << endl;
 
-    return 0;
+   // return 0;
 }
